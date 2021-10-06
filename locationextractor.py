@@ -10,8 +10,8 @@ from newspaper import Article
 
 nlp = spacy.load('en_core_web_sm')
 """
-Modify 'Bali' and 'padang' as Geopolitical Entity (GPE) as it's not identified by the model.
-Spacy's entity ruler was used to overwrite Bali's label from PERSON to GPE.
+Modify 'Bali' and 'padang' labels as Geopolitical Entity (GPE) as it's not identified as one by the model.
+This is done using Spacy's Entity Ruler.
 Also, made the pattern matching case insensitive using "LOWER".
 """
 ruler = nlp.add_pipe("entity_ruler", config= {"overwrite_ents":True})
